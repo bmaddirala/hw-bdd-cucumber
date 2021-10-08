@@ -28,7 +28,7 @@ Feature: display list of movies filtered by MPAA rating
     # enter step(s) to ensure that other movies are not visible
     When I check the following ratings: PG,R            # features/step_definitions/movie_steps.rb:31
     And I uncheck the following ratings: G,PG-13        # features/step_definitions/movie_steps.rb:31
-    And I press "Refresh"                               # features/step_definitions/web_steps.rb:52
+    And I press "ratings_submit"                        # features/step_definitions/web_steps.rb:52
     Then I should see "The Terminator"                  # features/step_definitions/web_steps.rb:105
     Then I should see "When Harry Met Sally"            # features/step_definitions/web_steps.rb:105
     Then I should see "Amelie"                          # features/step_definitions/web_steps.rb:105
@@ -43,7 +43,7 @@ Feature: display list of movies filtered by MPAA rating
   Scenario: all ratings selected                     # features/filter_movie_list.feature:48
     # see assignment
     When I check the following ratings: PG,R,G,PG-13 # features/step_definitions/movie_steps.rb:31
-    And I press "Refresh"                            # features/step_definitions/web_steps.rb:52
+    And I press "ratings_submit"                     # features/step_definitions/web_steps.rb:52
     Then I should see all the movies                 # features/step_definitions/movie_steps.rb:45
 
 Feature: display list of movies sorted by different criteria
@@ -93,4 +93,4 @@ Feature: display list of movies sorted by different criteria
 
 4 scenarios (4 passed)
 48 steps (48 passed)
-0m0.697s
+0m0.724s
